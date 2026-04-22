@@ -65,7 +65,7 @@
 <li>xextool ( for .xex )</li>
 <li>Visual Studio 2019+</li>
 <li>IDA 9.2.2+ for .idb</li>
-<li><a href= "https://angelcode.com/products/bmfont/">Bitmap Font Generator</a></li>
+<li><a href= "https://angelcode.com/products/bmfont/">AngelCode Bitmap Font Generator</a> to build font</li>
 </ul>
 
 <h1>How to Run</h1>
