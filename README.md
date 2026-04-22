@@ -64,6 +64,7 @@
 <li>Microsoft Visual C++ 2005 Redistributable Package</li>
 <li>xextool ( for .xex )</li>
 <li>Visual Studio 2019+</li>
+<li>IDA 9.2.2+ for .idb</li>
 </ul>
 
 <h1>How to Run</h1>
