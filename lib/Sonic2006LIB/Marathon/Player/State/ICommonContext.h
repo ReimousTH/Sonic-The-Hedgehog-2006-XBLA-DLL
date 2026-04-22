@@ -1,0 +1,112 @@
+#pragma once
+
+#include "IContext.h"
+#include "ICommonContextIF.h"
+#include <vector>
+
+#include <Marathon.inl>
+
+namespace Sonicteam{
+
+	namespace Player{
+
+		namespace State{
+
+			class ICommonContext:public IContext,ICommonContextIF
+			{
+			public:
+
+				///IDynamicLink
+				// normal call
+				virtual void OnLink(DynContainer(Sonicteam::Player::IPlugIn) plugin) override  {};
+				///
+
+				///IVarible
+				//pure_call
+				virtual void OnVarible(IVARIABLETYPE) override = 0;
+				///
+
+
+				///IContext
+				//pure_call
+				virtual void ICOnPostInputTick(void) override = 0;
+				virtual void ICOnInputTick(float) override;
+				///IContext(ICommonContextAddition)
+				//for some reason just zero  = 0 idk how is this possbile tho
+				virtual void ICOnOnDamage(DWORD) = 0; 
+				///
+
+
+
+	
+
+
+				///IFlagCommunicator
+				virtual void ImportIModelAnimationFlag(DWORD flag_value) override; //TODO FUNCTION sub_82208F58
+				///
+
+
+
+				///ICommonContextIF
+				//all pure_calls should be
+				virtual void ICCIF_01(float,float,float) override;
+				virtual void ICCIF_02(float,float,float,float) override;
+				virtual unsigned int ICCIFGetFlag() override = 0;
+				virtual unsigned int ICCIFGetFlag2() override = 0;
+				virtual unsigned int ICCIFGetFlag3() override = 0;
+				virtual float GetTotalSpeedY() override;
+				virtual float GetTotalSpeedZ() override;
+				///
+
+
+
+			public:
+				//fields_but i not sure  that all should be here
+				//or 
+			
+				float base_speed_z; //Can Be Added //0x30
+				float gimmick_speed_z; //0x34
+				float base_speed_y; //0x38
+				float gimmick_speed_y; //0x3C
+			
+				DWORD CurrentAnimation; //0x40
+				float LockInputTime;
+
+				float LastVelocityZ;
+				float LastVelocityY;
+				float LastLockInputTime;
+				DWORD Input; // What button was pressed
+
+				float CurrentStickBorder;
+				float unk02;
+
+				XMFLOAT4 StickFixedRotationMb; // (Camera not used in Calculation)
+
+				DWORD AnimationState;
+				//0x74 ->
+				float field_74;
+				float field_78;
+				float field_7C;
+				float field_80;
+
+				//By Looking to CommonContext new vfttable start from 0x90 means something should be there
+				float field_84;
+				float field_88;
+				float field_8C;
+
+
+
+
+
+
+
+				ICommonContext(void);
+				~ICommonContext(void);
+
+				MARATHON_DESTRUCTION_H(ICommonContext);;
+			};
+
+		}
+	}
+}
+

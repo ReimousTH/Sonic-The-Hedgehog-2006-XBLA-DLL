@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DATABASE>
+<EXE Name="link.exe" ID="ForceManifestLink">
+    <MATCHING_FILE Name="LINK.EXE" />
+    <MATCHING_FILE Name="link.exe" />
+    <APP Name="Link with Manifest" Vendor="XboxSDK" />
+    <MANIFESTFILE Name="link.exe.manifest" Path="D:\Misc2\XboxSDK3529\bin\win32\" />
+</EXE>
+</DATABASE>

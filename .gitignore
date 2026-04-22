@@ -1,0 +1,16 @@
+*.suo
+*.ncp
+*.lib
+*.pdb
+*.map
+*.idb
+*.obj
+*.dll
+*.exp
+*.xex
+.vscode/
+.vs/
+files/default.xex
+files/default_core.xex
+out/
+thirdparty/XENON_SDK
